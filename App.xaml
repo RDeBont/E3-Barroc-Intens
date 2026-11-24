@@ -8,9 +8,14 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
-            <!-- Other app resources here -->
+
+            <!-- Huisstijl -->
+            <Color x:Key="BarrocDark">#212121</Color>
+            <Color x:Key="BarrocYellow">#FFD700</Color>
+            <SolidColorBrush x:Key="BarrocDarkBrush" Color="{StaticResource BarrocDark}" />
+            <SolidColorBrush x:Key="BarrocYellowBrush" Color="{StaticResource BarrocYellow}" />
+            <FontFamily x:Key="HeadingFont">/Assets/Fonts/BigShouldersDisplay-Bold.ttf#Big Shoulders Display</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

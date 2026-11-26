@@ -83,6 +83,9 @@ namespace E3_Barroc_Intens.Data
                 .HasOne(r => r.Offerte).WithMany(o => o.Regels)
                 .HasForeignKey(r => r.OfferteId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            SeedData.Vul(modelBuilder);
+
         }
     }
 }

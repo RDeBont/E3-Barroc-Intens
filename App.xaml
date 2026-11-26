@@ -3,19 +3,16 @@
     x:Class="E3_Barroc_Intens.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:E3_Barroc_Intens">
+    xmlns:local="using:E3_Barroc_Intens"
+    RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-            </ResourceDictionary.MergedDictionaries>
 
-            <!-- Huisstijl -->
-            <Color x:Key="BarrocDark">#212121</Color>
-            <Color x:Key="BarrocYellow">#FFD700</Color>
-            <SolidColorBrush x:Key="BarrocDarkBrush" Color="{StaticResource BarrocDark}" />
-            <SolidColorBrush x:Key="BarrocYellowBrush" Color="{StaticResource BarrocYellow}" />
-            <FontFamily x:Key="HeadingFont">/Assets/Fonts/BigShouldersDisplay-Bold.ttf#Big Shoulders Display</FontFamily>
+                <!-- Huisstijl -->
+                <ResourceDictionary Source="/Styles/Huisstijl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

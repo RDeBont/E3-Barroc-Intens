@@ -14,24 +14,11 @@
 	<WindowsAppSdkDeploymentManagerInitialize>false</WindowsAppSdkDeploymentManagerInitialize>
   </PropertyGroup>
   <ItemGroup>
-    <Content Remove="Assets\Fonts\BigShouldersDisplay-Black.ttf" />
-    <Content Remove="Assets\Fonts\BigShouldersDisplay-Bold.ttf" />
-    <Content Remove="Assets\Fonts\BigShouldersDisplay-ExtraBold.ttf" />
-    <Content Remove="Assets\Fonts\BigShouldersDisplay-Medium.ttf" />
-    <Content Remove="Assets\Fonts\BigShouldersDisplay-Regular.ttf" />
-    <Content Remove="Assets\Fonts\BigShouldersDisplay-SemiBold.ttf" />
-    <Content Remove="Assets\Logo\Logo1_groot.png" />
-    <Content Remove="Assets\Logo\Logo1_klein.png" />
-    <Content Remove="Assets\Logo\Logo2_groot.png" />
-    <Content Remove="Assets\Logo\Logo2_klein.png" />
-    <Content Remove="Assets\Logo\Logo3_groot.png" />
-    <Content Remove="Assets\Logo\Logo3_klein.png" />
-    <Content Remove="Assets\Logo\Logo4_groot.png" />
-    <Content Remove="Assets\Logo\Logo4_klein.png" />
-    <Content Remove="Assets\Logo\Logo5_groot.png" />
-    <Content Remove="Assets\Logo\Logo5_klein.png" />
-    <Content Remove="Assets\Logo\Logo6_groot.png" />
-    <Content Remove="Assets\Logo\Logo6_klein.png" />
+    <Content Include="Assets\Fonts\*.ttf" />
+    <Content Include="Assets\Logo\*.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\Huisstijl.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,6 +57,11 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Styles\Huisstijl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--

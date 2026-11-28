@@ -4,7 +4,7 @@ using System.Text;
 
 namespace E3_Barroc_Intens.Helpers
 {
-    public static class WachtwoordHelper
+    public static class PasswordHelper
     {
 
         //Stack overflow

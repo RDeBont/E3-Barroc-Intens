@@ -15,6 +15,9 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using E3_Barroc_Intens.Helpers;
+using E3_Barroc_Intens.Models;
+using E3_Barroc_Intens.Models.Enums;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -43,6 +46,9 @@ namespace E3_Barroc_Intens
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
+            //weghalen zodra het inloggen werkt
+            Session.Login(new Medewerker { Naam = "Beheerder", Rol = Rol.Admin });
+
             _window = new MainWindow();
             _window.Activate();
         }

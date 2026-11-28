@@ -36,6 +36,7 @@
     <FontFamily x:Key="ContentControlThemeFontFamily">ms-appx:///Assets/Fonts/Roboto-Regular.ttf#Roboto</FontFamily>
 
     <!-- Logo's -->
+    <BitmapImage x:Key="LogoMenubalk" UriSource="ms-appx:///Assets/Logo/LogoMenubalk.png" />
     <BitmapImage x:Key="LogoMetSlogan" UriSource="ms-appx:///Assets/Logo/Logo1_groot.png" />
     <BitmapImage x:Key="LogoGroot" UriSource="ms-appx:///Assets/Logo/Logo6_groot.png" />
     <BitmapImage x:Key="LogoBit" UriSource="ms-appx:///Assets/Logo/Logo5_groot.png" />
@@ -126,4 +127,62 @@
         <Setter Property="BorderThickness" Value="0,0,0,1" />
     </Style>
 
+    <!-- Menubalk -->
+    <SolidColorBrush x:Key="BarrocMenuActiefBrush" Color="#2E2E2E" />
+    <SolidColorBrush x:Key="BarrocMenuLijnBrush" Color="#3A3A3A" />
+    <SolidColorBrush x:Key="BarrocMenuTekstGrijsBrush" Color="#9E9E9E" />
+
+    <Style x:Key="MenuKnopStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource BarrocWhiteBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="4,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="20,12" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="RootGrid"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Target="RootGrid.Background" Value="#2E2E2E" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Target="RootGrid.Background" Value="#383838" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter Padding="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="Center"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          Content="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MenuKnopActiefStyle" TargetType="Button" BasedOn="{StaticResource MenuKnopStyle}">
+        <Setter Property="Background" Value="{StaticResource BarrocMenuActiefBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BarrocYellowBrush}" />
+    </Style>
+
+    <Style x:Key="UitlogKnopStyle" TargetType="Button" BasedOn="{StaticResource MenuKnopStyle}">
+        <Setter Property="Foreground" Value="{StaticResource BarrocYellowBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="0,2" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
 </ResourceDictionary>

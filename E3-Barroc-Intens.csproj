@@ -19,6 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Styles\Huisstijl.xaml" />
+    <None Remove="Views\PlaceholderPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,7 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\PlaceholderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Styles\Huisstijl.xaml">

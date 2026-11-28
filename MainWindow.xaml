@@ -7,54 +7,37 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="E3-Barroc-Intens">
+    Title="Barroc Intens">
 
-    <ScrollViewer Background="{StaticResource BarrocWhiteBrush}">
-        <StackPanel Padding="40" Spacing="12" MaxWidth="700" HorizontalAlignment="Left">
-            <Image Source="{StaticResource LogoMetSlogan}" Height="120" HorizontalAlignment="Left" />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Klanten &amp; prospects" Style="{StaticResource PaginaTitelStyle}" />
-            <TextBlock Text="Bezoekadres" Style="{StaticResource SectieKopStyle}" />
-            <TextBlock Text="Dit is gewone tekst in Roboto." Style="{StaticResource BodyTekstStyle}" />
+        <Grid Grid.Column="0" Background="{StaticResource BarrocDarkBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <TextBlock Text="Naam" Style="{StaticResource LabelStyle}" />
-            <TextBox PlaceholderText="Café De Kroon" />
-            <TextBlock Text="Wachtwoord" Style="{StaticResource LabelStyle}" />
-            <PasswordBox />
-            <TextBlock Text="Rol" Style="{StaticResource LabelStyle}" />
-            <ComboBox PlaceholderText="Kies een rol">
-                <x:String>Sales</x:String>
-                <x:String>Finance</x:String>
-            </ComboBox>
-
-            <StackPanel Orientation="Horizontal" Spacing="8">
-                <Button Content="Annuleren" Style="{StaticResource SecundaireKnopStyle}" />
-                <Button Content="Opslaan" Style="{StaticResource HoofdknopStyle}" />
-            </StackPanel>
-
-            <Border Style="{StaticResource TabelKopStyle}" Margin="0,16,0,0">
-                <Grid ColumnDefinitions="2*,*,*">
-                    <TextBlock Text="Naam" Style="{StaticResource TabelKopTekstStyle}" />
-                    <TextBlock Grid.Column="1" Text="Plaats" Style="{StaticResource TabelKopTekstStyle}" />
-                    <TextBlock Grid.Column="2" Text="Status" Style="{StaticResource TabelKopTekstStyle}" />
-                </Grid>
+            <Border Grid.Row="0" Padding="20,20" BorderBrush="{StaticResource BarrocMenuLijnBrush}" BorderThickness="0,0,0,1">
+                <Image Source="{StaticResource LogoMenubalk}" Height="44" HorizontalAlignment="Left" />
             </Border>
-            <ListView ItemContainerStyle="{StaticResource TabelRijStyle}" SelectionMode="Single" Margin="0,-12,0,0">
-                <ListViewItem>
-                    <Grid ColumnDefinitions="2*,*,*">
-                        <TextBlock Text="Café De Kroon" VerticalAlignment="Center" />
-                        <TextBlock Grid.Column="1" Text="Breda" VerticalAlignment="Center" />
-                        <TextBlock Grid.Column="2" Text="Klant" VerticalAlignment="Center" />
-                    </Grid>
-                </ListViewItem>
-                <ListViewItem>
-                    <Grid ColumnDefinitions="2*,*,*">
-                        <TextBlock Text="Hotel Zuid" VerticalAlignment="Center" />
-                        <TextBlock Grid.Column="1" Text="Tilburg" VerticalAlignment="Center" />
-                        <TextBlock Grid.Column="2" Text="Prospect" VerticalAlignment="Center" />
-                    </Grid>
-                </ListViewItem>
-            </ListView>
-        </StackPanel>
-    </ScrollViewer>
+
+            <ScrollViewer Grid.Row="1" Padding="0,8,0,0">
+                <StackPanel x:Name="MenuPanel" />
+            </ScrollViewer>
+
+            <Border Grid.Row="2" Padding="20,16" BorderBrush="{StaticResource BarrocMenuLijnBrush}" BorderThickness="0,1,0,0">
+                <StackPanel Spacing="2">
+                    <TextBlock x:Name="UserInfoText" Foreground="{StaticResource BarrocMenuTekstGrijsBrush}" FontSize="13" />
+                    <Button Content="Uitloggen" Style="{StaticResource UitlogKnopStyle}" Click="LogoutButton_Click" Margin="0,6,0,0" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Frame x:Name="detailFrame" Grid.Column="1" Background="{StaticResource BarrocWhiteBrush}" />
+    </Grid>
 </Window>

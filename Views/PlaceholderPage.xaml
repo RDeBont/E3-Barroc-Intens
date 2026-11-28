@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="E3_Barroc_Intens.Views.PlaceholderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:E3_Barroc_Intens.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Padding="32,24">
+        <TextBlock x:Name="TitleText" Style="{StaticResource PaginaTitelStyle}" />
+        <TextBlock Text="Dit scherm wordt in een volgend ticket gebouwd." Style="{StaticResource BodyTekstStyle}" />
+    </StackPanel>
+</Page>

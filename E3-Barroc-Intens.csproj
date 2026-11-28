@@ -19,6 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Styles\Huisstijl.xaml" />
+    <None Remove="Views\LoginWindow.xaml" />
     <None Remove="Views\PlaceholderPage.xaml" />
   </ItemGroup>
 
@@ -57,6 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\PlaceholderPage.xaml">

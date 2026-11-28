@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="E3_Barroc_Intens.Views.LoginWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Barroc Intens">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="{StaticResource BarrocDarkBrush}">
+            <Image Source="{StaticResource LogoMenubalk}" Height="110"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Column="1" Background="{StaticResource BarrocWhiteBrush}">
+            <StackPanel Width="400" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="90,0,40,0" Spacing="4">
+                <TextBlock Text="Inloggen" Style="{StaticResource PaginaTitelStyle}" Margin="0,0,0,8" />
+
+                <TextBlock Text="Gebruikersnaam" Style="{StaticResource LabelStyle}" />
+                <TextBox x:Name="UsernameInput" TextChanged="UsernameInput_TextChanged" />
+
+                <TextBlock Text="Wachtwoord" Style="{StaticResource LabelStyle}" Margin="0,12,0,4" />
+                <PasswordBox x:Name="PasswordInput" PasswordChanged="PasswordInput_PasswordChanged" KeyDown="PasswordInput_KeyDown" />
+
+                <InfoBar x:Name="ErrorInfoBar"
+                         Severity="Error"
+                         Title="Let op:"
+                         Message="Onjuiste gegevens of account is inactief."
+                         IsClosable="False"
+                         IsOpen="False"
+                         Margin="0,16,0,0" />
+
+                <Button Content="Inloggen" Style="{StaticResource HoofdknopStyle}" Click="LoginButton_Click" Margin="0,16,0,0" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

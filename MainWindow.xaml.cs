@@ -93,6 +93,8 @@ namespace E3_Barroc_Intens
         {
             Session.Logout();
 
+            var loginWindow = new LoginWindow();
+            loginWindow.Activate();
             Close();
         }
     }
